@@ -41,6 +41,7 @@
 #include "hardware_parameters.h" /* hw_param_*() */
 #include "sound_open_device.h"   /* sound_device_open() */
 #include "sound_parameters.h"    /* sound_frames_to_bytes(), SND_* */
+#include "sound_transfer.h"      /* snd_*_transfer() */
 
 #define PAGE_SIZE  sysconf(_SC_PAGE_SIZE)
 #define page_align(size) \

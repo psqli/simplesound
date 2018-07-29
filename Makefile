@@ -30,7 +30,7 @@ sound_parameters.o: sound_parameters.c hardware_parameters.h \
 sound_open_device.o: sound_open_device.c sound_open_device.h
 
 sound_setup.o: sound_setup.c sound_global.h hardware_parameters.h \
-  sound_open_device.h sound_parameters.h
+  sound_open_device.h sound_parameters.h sound_transfer.h
 
 sound_transfer.o: sound_transfer.c sound_global.h sound_operations.h
 

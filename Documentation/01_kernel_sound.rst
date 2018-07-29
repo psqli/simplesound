@@ -16,7 +16,7 @@ Overview
 
 Sound is broken in pieces of the same size (**periods**) to
 allow the computer work in other tasks while the sound
-device is working. The periods are constituted by frames.
+device is working. The periods are made up of frames.
 
 The application must transfer periods to/from sound device
 before it runs out of data (**underrun** in playback) or

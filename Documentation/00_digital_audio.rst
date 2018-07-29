@@ -42,6 +42,6 @@ The number of frames per second is called **rate**.
 
 The sample has a range limited by the number of bits
 reserved to store it. In the example above, the samples
-have a range from -3 to 3 (7 possibilities), thus 4 bits
+have a range from -3 to 3 (7 possibilities), thus 3 bits
 (8 possibilities) is sufficient to store the data.
 Generally the ranges are a multiple of a byte (8 bits).

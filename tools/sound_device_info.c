@@ -36,8 +36,8 @@ static void
 print_sign(struct snd_parameters *p, unsigned int f_unsigned,
            unsigned int f_signed)
 {
-	f_unsigned = sound_params_test(p, SND_FORMAT, f_unsigned);
-	f_signed =   sound_params_test(p, SND_FORMAT, f_signed);
+	f_unsigned = snd_params_test(p, SND_FORMAT, f_unsigned);
+	f_signed =   snd_params_test(p, SND_FORMAT, f_signed);
 
 	if (f_unsigned && f_signed)
 		printf("Unsigned and Signed\n");
@@ -82,7 +82,7 @@ print_range(struct snd_parameters *p, unsigned int parameter)
 {
 	unsigned int min, max;
 
-	sound_params_get_interval(p, parameter, &min, &max);
+	snd_params_get_interval(p, parameter, &min, &max);
 	printf("min: %u, max: %u\n", min, max);
 }
 
@@ -90,7 +90,7 @@ static void
 print_parameters(struct snd_parameters *p)
 {
 	printf("MMAP access: %s\n",
-	       sound_params_test(p, SND_ACCESS, SND_ACCESS_MMAP)
+	       snd_params_test(p, SND_ACCESS, SND_ACCESS_MMAP)
 	       ? "Yes" : "No");
 
 	printf("Sample bits: ");
@@ -143,13 +143,13 @@ print_device(unsigned int card, unsigned int device, unsigned int type)
 	else
 		printf("Capture\n");
 
-	fd = sound_device_open(card, device, type | SND_NONBLOCK);
+	fd = snd_device_open(card, device, type | SND_NONBLOCK);
 	if (fd == -1) {
 		perror("Couldn't open device");
 		return 1;
 	}
 
-	if (sound_params_init(fd, &p) == -1)
+	if (snd_params_init(fd, &p) == -1)
 		goto _go_close;
 
 	print_info(fd);

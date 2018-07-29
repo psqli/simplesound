@@ -74,7 +74,11 @@ set_hardware_parameters(struct snd *pcm, struct snd_config *config)
 	hw_param_set(&hw_params, SND_CHANNELS,    config->channels);
 	hw_param_set(&hw_params, SND_RATE,        config->rate);
 	hw_param_set(&hw_params, SND_PERIOD_SIZE, config->period_size);
-	hw_param_set(&hw_params, SND_PERIODS,     config->period_count);
+
+	if (config->period_count == 0)
+		hw_param_set(&hw_params, SND_PERIODS, 2);
+	else
+		hw_param_set(&hw_params, SND_PERIODS, config->period_count);
 
 #if 0
 	/*

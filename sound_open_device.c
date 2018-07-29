@@ -33,7 +33,7 @@
 
 /* open sound character device and return file descriptor */
 int
-sound_device_open(unsigned int card, unsigned int device, int flags)
+snd_device_open(unsigned int card, unsigned int device, int flags)
 {
 	char path[256];
 

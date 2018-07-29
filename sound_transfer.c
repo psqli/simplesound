@@ -47,9 +47,9 @@ int
 snd_mmap_areas_copy(struct snd *snd, unsigned int pcm_offset, char *buf,
                       unsigned int user_offset, unsigned int frames)
 {
-	int size_bytes        = sound_frames_to_bytes(snd, frames);
-	int pcm_offset_bytes  = sound_frames_to_bytes(snd, pcm_offset);
-	int user_offset_bytes = sound_frames_to_bytes(snd, user_offset);
+	int size_bytes        = snd_frames_to_bytes(snd, frames);
+	int pcm_offset_bytes  = snd_frames_to_bytes(snd, pcm_offset);
+	int user_offset_bytes = snd_frames_to_bytes(snd, user_offset);
 
 	if (snd->type & SND_INPUT)
 		memcpy(buf + user_offset_bytes,

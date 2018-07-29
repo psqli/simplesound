@@ -104,38 +104,38 @@ struct snd_parameters {
 #define SND_NO_INTERRUPTS  SNDRV_PCM_HW_PARAMS_NO_PERIOD_WAKEUP
 
 int
-sound_params_test(struct snd_parameters *p, unsigned int parameter,
+snd_params_test(struct snd_parameters *p, unsigned int parameter,
                   unsigned int value);
 
 void
-sound_params_get_interval(struct snd_parameters *p, unsigned int parameter,
+snd_params_get_interval(struct snd_parameters *p, unsigned int parameter,
                           unsigned int *min, unsigned int *max);
 
 int
-sound_params_init(int fd, struct snd_parameters *params);
+snd_params_init(int fd, struct snd_parameters *params);
 
 static inline unsigned int
-sound_params_get_min(struct snd_parameters *p, unsigned int parameter)
+snd_params_get_min(struct snd_parameters *p, unsigned int parameter)
 {
 	unsigned int min, max;
 
-	sound_params_get_interval(p, parameter, &min, &max);
+	snd_params_get_interval(p, parameter, &min, &max);
 
 	return min;
 }
 
 static inline unsigned int
-sound_params_get_max(struct snd_parameters *p, unsigned int parameter)
+snd_params_get_max(struct snd_parameters *p, unsigned int parameter)
 {
 	unsigned int min, max;
 
-	sound_params_get_interval(p, parameter, &min, &max);
+	snd_params_get_interval(p, parameter, &min, &max);
 
 	return max;
 }
 
 static inline unsigned int
-sound_format_to_bytes(unsigned int format)
+snd_format_to_bytes(unsigned int format)
 {
 	switch (format) {
 	case SND_FORMAT_S8:

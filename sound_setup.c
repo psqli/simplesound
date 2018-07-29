@@ -92,7 +92,7 @@ set_hardware_parameters(struct snd *pcm, struct snd_config *config)
 	/* NOTE: we assume parameters have not changed */
 
 	pcm->bytes_per_frame =
-	  config->channels * sound_format_to_bytes(config->format);
+	  config->channels * snd_format_to_bytes(config->format);
 	pcm->buffer_size = config->period_count * config->period_size;
 
 	return 0;
@@ -228,7 +228,7 @@ setup_control_and_status(struct snd *pcm)
 static void
 cleanup_mmap_buffer(struct snd *pcm)
 {
-	unsigned int size = sound_frames_to_bytes(pcm, pcm->buffer_size);
+	unsigned int size = snd_frames_to_bytes(pcm, pcm->buffer_size);
 
 	munmap(pcm->mmap_buffer, page_align(size));
 }
@@ -236,7 +236,7 @@ cleanup_mmap_buffer(struct snd *pcm)
 static int
 setup_mmap_buffer(struct snd *pcm)
 {
-	unsigned int size = sound_frames_to_bytes(pcm, pcm->buffer_size);
+	unsigned int size = snd_frames_to_bytes(pcm, pcm->buffer_size);
 
 	pcm->mmap_buffer = mmap(NULL, page_align(size),
 	                        PROT_READ | PROT_WRITE,  MAP_FILE | MAP_SHARED,
@@ -267,7 +267,7 @@ snd_open(struct snd *pcm, struct snd_config *config)
 	/* clear pcm structure */
 	memset(pcm, 0, sizeof(*pcm));
 
-	pcm->fd = sound_device_open(config->card, config->device,
+	pcm->fd = snd_device_open(config->card, config->device,
 	                            config->flags);
 	if (pcm->fd == -1)
 		return -1;

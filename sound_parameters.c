@@ -31,7 +31,7 @@
 #include "hardware_parameters.h" /* hw_param_*() */
 
 int
-sound_params_test(struct snd_parameters *p, unsigned int parameter,
+snd_params_test(struct snd_parameters *p, unsigned int parameter,
                   unsigned int value)
 {
 	return hw_param_get_mask(&p->hw_params, parameter, value);
@@ -39,14 +39,14 @@ sound_params_test(struct snd_parameters *p, unsigned int parameter,
 
 /* get minimum and maximum value of a given parameter */
 void
-sound_params_get_interval(struct snd_parameters *p, unsigned int parameter,
+snd_params_get_interval(struct snd_parameters *p, unsigned int parameter,
                           unsigned int *min, unsigned int *max)
 {
 	hw_param_get_interval(&p->hw_params, parameter, min, max);
 }
 
 int
-sound_params_init(int fd, struct snd_parameters *p)
+snd_params_init(int fd, struct snd_parameters *p)
 {
 	hw_param_fill(&p->hw_params);
 	if (ioctl(fd, SNDRV_PCM_IOCTL_HW_REFINE, &p->hw_params) == -1)

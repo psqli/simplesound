@@ -191,13 +191,13 @@ snd_is_empty(struct snd *pcm)
 #endif
 
 static inline unsigned int
-sound_bytes_to_frames(const struct snd *pcm, unsigned int bytes)
+snd_bytes_to_frames(const struct snd *pcm, unsigned int bytes)
 {
 	return bytes / pcm->bytes_per_frame;
 }
 
 static inline unsigned int
-sound_frames_to_bytes(const struct snd *pcm, unsigned int frames)
+snd_frames_to_bytes(const struct snd *pcm, unsigned int frames)
 {
 	return frames * pcm->bytes_per_frame;
 }

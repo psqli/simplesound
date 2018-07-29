@@ -29,6 +29,6 @@
 #define SND_NONBLOCK   0x00000002
 
 int
-sound_device_open(unsigned int card, unsigned int device, int flags);
+snd_device_open(unsigned int card, unsigned int device, int flags);
 
 #endif /* SOUND_OPEN_DEVICE_H */

@@ -257,7 +257,7 @@ snd_close(struct snd *pcm)
 {
 	cleanup_control_and_status(pcm);
 
-	if (pcm->transfer == snd_mmap_transfer) {
+	if (pcm->mmap_buffer != NULL) {
 		ioctl(pcm->fd, SNDRV_PCM_IOCTL_DROP);
 		cleanup_mmap_buffer(pcm);
 	}
@@ -289,6 +289,7 @@ snd_open(struct snd *pcm, struct snd_config *config)
 			goto _go_close_device;
 		pcm->transfer = snd_mmap_transfer;
 	} else {
+		pcm->mmap_buffer = NULL;
 		pcm->transfer = snd_ioctl_transfer;
 	}
 

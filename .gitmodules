@@ -1,3 +1,6 @@
 [submodule "tools/clock_deviation_utility"]
 	path = tools/clock_deviation_utility
 	url = https://github.com/ricardobiehl/clock_deviation_utility.git
+[submodule "tools/sched_deadline"]
+	path = tools/sched_deadline
+	url = https://github.com/ricardobiehl/sched_deadline_test.git

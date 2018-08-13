@@ -1,0 +1,3 @@
+[submodule "tools/clock_deviation_utility"]
+	path = tools/clock_deviation_utility
+	url = https://github.com/ricardobiehl/clock_deviation_utility.git

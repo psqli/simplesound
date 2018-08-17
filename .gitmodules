@@ -4,3 +4,6 @@
 [submodule "tools/sched_deadline"]
 	path = tools/sched_deadline
 	url = https://github.com/ricardobiehl/sched_deadline_test.git
+[submodule "tools/time_helpers"]
+	path = tools/time_helpers
+	url = https://github.com/ricardobiehl/time_helpers.git

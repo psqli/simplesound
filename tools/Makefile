@@ -6,6 +6,7 @@
 CFLAGS = -Wall \
          -I.. \
          -I./clock_deviation_utility \
+         -I./sched_deadline \
          -I./time_helpers
 
 # -L          Add a search path for libraries.
@@ -14,7 +15,7 @@ LDFLAGS = -L.. -Wl,-rpath=. -Wl,-rpath=..
 LDLIBS = -lsimplesound
 
 # Additional search path for prerequisites.
-VPATH = ..:./clock_deviation_utility:./time_helpers
+VPATH = ..:./clock_deviation_utility:./sched_deadline:./time_helpers
 
 all: sound_device_info
 
@@ -24,6 +25,10 @@ sound_device_info: sound_device_info.o
 
 sound_device_info.o: sound_device_info.c sound_open_device.h \
   sound_parameters.h
+
+# Timer wake up using SCHED_DEADLINE
+
+deadline_wakeup.o: deadline_wakeup.c sched_deadline.h sound.h timer_wakeup.h
 
 # Timer wake up implementation
 

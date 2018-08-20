@@ -64,3 +64,25 @@ Files
 
 - ``sound_global.h``: global header file. Contains sound
   structures and macros.
+
+
+Additional tools
+================
+
+See ``tools/`` directory.
+
+- ``sound_device_info.c``: print information about sound
+  device.
+
+- ``waveplay.c``: play .wav files, test timer_wakeup,
+  deadline_wakeup and mix_utility.
+
+- ``timer_wakeup.c``: helpers for application wake up
+  using a system timer. Read
+  ``Documentation/timer_wakeup.rst``.
+
+- ``deadline_wakeup.c``: application wake up using
+  SCHED_DEADLINE Linux scheduler. Read
+  ``Documentation/timer_wakeup.rst``.
+
+- ``mix_utility.c``: sound mixing helpers.

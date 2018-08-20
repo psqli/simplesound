@@ -17,24 +17,12 @@
  */
 
 /*
- * 01/06/2018
- *
- * SCHED_DEADLINE test
- *
- * ---------------------
- *
  * 12/06/2018
  *
  * Sound scheduling using the deadline scheduler
  *
  * See this presentation by Alessio Balsini:
  * http://retis.sssup.it/ospm-summit/Downloads/OSPM_deadline_audio.pdf
- *
- * ---------------------
- *
- * 29/06/2018
- *
- * TODO: see <http://retis.sssup.it/~luca/TuToR/sched_dl-presentation.pdf>
  */
 
 #include <stdio.h> /* printf(), perror() */

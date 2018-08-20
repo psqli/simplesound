@@ -4,4 +4,5 @@ To do list
 
 - 26/07/2018: Create hardware parameters documentation.
 - 28/07/2018: Review documentation.
-- 28/07/2018: (ignore this) add pending files
+- 20/08/2018: tools/timer_wakeup.c: Fix smooth correction
+  when ratio is imprecise. E.g. 19/10=1, 10/11=0

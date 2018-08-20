@@ -4,6 +4,10 @@ Simple Linux sound I/O library
 
 :Date: 2017-08-27
 
+This library is under development. Do not expect any
+stability. The API (Application Programming Interface)
+may change at any time.
+
 
 How to use
 ==========

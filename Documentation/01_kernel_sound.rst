@@ -62,7 +62,7 @@ read.
 The sound handling code inside kernel, while handling the
 interrupt, increments a counter (by period size) of frames
 the sound device have processed called hardware pointer
-(NOTE: it's not a pointer!).
+(NOTE: it's not a pointer as in programming!).
 
 It's possible to configure the audio device to disable
 interrupts, so the application needs to use a timer for

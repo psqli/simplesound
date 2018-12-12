@@ -221,7 +221,7 @@ xrun state if ``avail >= stop_threshold``, and
 wake up applications waiting for ``avail >= avail_min``.
 
 The ``pointer()`` function inside device driver returns
-the position within buffer size. It it returns -1 a xrun
+the position within buffer size. If it returns -1 a xrun
 is issued.
 
 

@@ -318,6 +318,7 @@ run(struct file *files,        unsigned int files_count, unsigned int card,
 
 _cleanup:
 	free(mix_dst);
+	free(mix_sum);
 	free(buffer);
 #if defined(TIMER_WAKEUP) || defined(DEADLINE_WAKEUP)
 	snd_timer_close(&snd_timer, &pcm);

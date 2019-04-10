@@ -242,7 +242,8 @@ setup_sound(struct snd *snd, struct snd_config *cfg)
 	struct snd_parameters p;
 
 	/* get allowed parameters */
-	fd = snd_device_open(0, 0, cfg->flags & SND_INPUT | SND_NONBLOCK);
+	fd = snd_device_open(cfg->card, cfg->device,
+			cfg->flags & SND_INPUT | SND_NONBLOCK);
 	if (fd == -1)
 		return -1;
 	snd_params_init(fd, &p);
